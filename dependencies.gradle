@@ -13,6 +13,8 @@ dependencies {
 
     // Android Support Libraries
     implementation libs.android.support.appCompat
+    implementation libs.android.support.activityKTX
+    implementation libs.android.support.fragmentKTX
     implementation libs.android.support.coreKTX
     implementation libs.android.support.recyclerView
     implementation libs.android.support.cardView
@@ -38,6 +40,10 @@ dependencies {
 
     // Gson Json Converter Library
     implementation libs.gson
+
+    // Hilt Libraries
+    implementation libs.hilt.client
+    kapt libs.hilt.compiler
 
     // Test Implementation Libraries
     testImplementation libs.junit

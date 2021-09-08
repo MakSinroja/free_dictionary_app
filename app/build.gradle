@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 def keystoreProperties = new Properties()
@@ -90,7 +91,10 @@ android {
             }
         }
         main {
-            res.srcDirs = ['src/main/res']
+            res.srcDirs = [
+                    file('src/main/res/layouts').listFiles(),
+                    'src/main/res'
+            ]
         }
     }
 
@@ -112,8 +116,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    // Allow references to generated code
+    kapt {
+        correctErrorTypes true
     }
 }
 

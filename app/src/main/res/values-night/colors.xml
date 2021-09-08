@@ -2,5 +2,5 @@
 <resources>
     <color name="primaryColor">#FF2196F3</color>
     <color name="primaryStatusColor">#FF1d87da</color>
-    <color name="primaryTextColor">#FF000000</color>
+    <color name="primaryTextColor">#FFFFFFFF</color>
 </resources>
