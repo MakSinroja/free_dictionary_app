@@ -2,6 +2,9 @@
 buildscript {
     ext.gradleVersion = '7.0.2'
     ext.kotlinVersion = '1.5.30'
+    ext.googleServiceVersion = '4.3.10'
+    ext.crashlyticsVersion = '2.7.1'
+    ext.performanceVersion = '1.4.0'
 
     ext.applicationName = 'Free Dictionary'
     ext.applicationAppId = 'developers.guru.freedictionaryapp'
@@ -38,6 +41,8 @@ buildscript {
                     ]
             ],
 
+            'firebaseBOMVersion'          : '28.4.0',
+
             'permissionsDispatcherVersion': '4.9.1',
 
             'timberVersion'               : '5.0.1',
@@ -58,9 +63,9 @@ buildscript {
             'android'         : [
                     'architecture': [
                             'lifecycle': [
-                                    'viewModel' : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.android.architecture.lifecycleVersion}",
-                                    'livedata'  : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.android.architecture.lifecycleVersion}",
-                                    'compiler'  : "androidx.lifecycle:lifecycle-compiler:${versions.android.architecture.lifecycleVersion}",
+                                    'viewModel': "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.android.architecture.lifecycleVersion}",
+                                    'livedata' : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.android.architecture.lifecycleVersion}",
+                                    'compiler' : "androidx.lifecycle:lifecycle-compiler:${versions.android.architecture.lifecycleVersion}",
                             ],
                             'room'     : [
                                     'runtime'  : "androidx.room:room-runtime:${versions.android.architecture.roomVersion}",
@@ -75,6 +80,14 @@ buildscript {
                             'material'    : "com.google.android.material:material:${versions.android.support.materialVersion}",
                             'constraint'  : "com.android.support.constraint:constraint-layout:${versions.android.support.constraintVersion}",
                     ],
+            ],
+
+            'firebaseBOM'     : "com.google.firebase:firebase-bom:${versions.firebaseBOMVersion}",
+
+            'firebase'        : [
+                    'analytics'  : "com.google.firebase:firebase-analytics-ktx",
+                    'crashlytics': "com.google.firebase:firebase-crashlytics-ktx",
+                    'performance': "com.google.firebase:firebase-perf-ktx",
             ],
 
             'permissions'     : [
@@ -101,11 +114,14 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.2"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30"
+        classpath "com.android.tools.build:gradle:$gradleVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        classpath "com.google.gms:google-services:$googleServiceVersion"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:$crashlyticsVersion"
+        classpath "com.google.firebase:perf-plugin:$performanceVersion"
     }
 }
 

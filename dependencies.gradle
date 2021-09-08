@@ -19,6 +19,12 @@ dependencies {
     implementation libs.android.support.material
     implementation libs.android.support.constraint
 
+    // Firebase Libraries
+    implementation platform(libs.firebaseBOM)
+    implementation libs.firebase.analytics
+    implementation libs.firebase.crashlytics
+    implementation libs.firebase.performance
+
     // Permission Dispatcher Libraries
     implementation libs.permissions.runtime
     kapt libs.permissions.processor

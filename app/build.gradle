@@ -11,6 +11,9 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
 android {
     compileSdk buildConfig.compileSdkVersion
 
@@ -49,11 +52,26 @@ android {
 
     buildTypes {
         debug {
+            firebaseCrashlytics {
+                mappingFileUploadEnabled false
+            }
+            manifestPlaceholders = [
+                    crashlyticsEnabled: false,
+                    performanceEnabled: false,
+            ]
             signingConfig signingConfigs.debug
         }
         release {
+            firebaseCrashlytics {
+                mappingFileUploadEnabled false
+            }
+            manifestPlaceholders = [
+                    crashlyticsEnabled: true,
+                    performanceEnabled: true,
+            ]
+            minifyEnabled true
+            shrinkResources true
             signingConfig signingConfigs.release
-            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
