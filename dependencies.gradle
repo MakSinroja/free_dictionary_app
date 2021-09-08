@@ -1,0 +1,40 @@
+dependencies {
+    // MultiDex Library
+    implementation libs.multidex
+
+    // Lifecycle Architecture Libraries
+    implementation libs.android.architecture.lifecycle.viewModel
+    implementation libs.android.architecture.lifecycle.livedata
+    kapt libs.android.architecture.lifecycle.compiler
+
+    // Room Architecture Libraries
+    implementation libs.android.architecture.room.runtime
+    kapt libs.android.architecture.room.processor
+
+    // Android Support Libraries
+    implementation libs.android.support.appCompat
+    implementation libs.android.support.coreKTX
+    implementation libs.android.support.recyclerView
+    implementation libs.android.support.cardView
+    implementation libs.android.support.material
+    implementation libs.android.support.constraint
+
+    // Permission Dispatcher Libraries
+    implementation libs.permissions.runtime
+    kapt libs.permissions.processor
+
+    // Timber Library
+    implementation libs.timber
+
+    // Independent Pixel Libraries
+    implementation libs.independentPixel.ssp
+    implementation libs.independentPixel.sdp
+
+    // Gson Json Converter Library
+    implementation libs.gson
+
+    // Test Implementation Libraries
+    testImplementation libs.junit
+    testImplementation libs.junitExt
+    androidTestImplementation libs.espresso
+}
