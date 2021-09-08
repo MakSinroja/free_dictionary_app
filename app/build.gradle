@@ -118,6 +118,8 @@ android {
 }
 
 dependencies {
+    // Custom Libraries
+    implementation project(':core')
 }
 
 apply from: '../dependencies.gradle'
