@@ -16,7 +16,7 @@ class SplashActivity : AppActivity<ActivitySplashBinding, SplashViewModel>() {
 
     private val splashViewModel by viewModels<SplashViewModel>()
 
-    override fun fullscreenActivity(): Boolean = true
+    override fun fullscreenActivity(): Boolean = false
 
     override fun transparentActivity(): Boolean = false
 
@@ -30,5 +30,7 @@ class SplashActivity : AppActivity<ActivitySplashBinding, SplashViewModel>() {
 
     override fun setLifecycleOwner(): LifecycleOwner = this@SplashActivity
 
-    override fun initialization() {}
+    override fun initialization() {
+        splashViewModel.initialization(getViewDataBinding())
+    }
 }

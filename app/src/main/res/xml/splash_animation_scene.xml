@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:autoTransition="none"
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1500">
+        <KeyFrameSet>
+            <KeyAttribute
+                android:scaleX="1.0"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/appIconCardView" />
+            <KeyAttribute
+                android:scaleY="1.0"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/appIconCardView" />
+
+            <KeyAttribute
+                android:scaleX="0.7"
+                motion:framePosition="20"
+                motion:motionTarget="@+id/appIconCardView" />
+            <KeyAttribute
+                android:scaleY="0.7"
+                motion:framePosition="20"
+                motion:motionTarget="@+id/appIconCardView" />
+
+            <KeyAttribute
+                android:scaleX="0.7"
+                motion:framePosition="40"
+                motion:motionTarget="@+id/appIconCardView" />
+            <KeyAttribute
+                android:scaleY="0.7"
+                motion:framePosition="40"
+                motion:motionTarget="@+id/appIconCardView" />
+
+            <KeyAttribute
+                android:scaleX="50.0"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/appIconCardView" />
+            <KeyAttribute
+                android:scaleY="50.0"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/appIconCardView" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/appIconCardView"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:transitionEasing="accelerate" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end"></ConstraintSet>
+</MotionScene>
