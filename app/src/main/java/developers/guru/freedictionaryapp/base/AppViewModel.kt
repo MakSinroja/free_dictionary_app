@@ -1,5 +1,6 @@
 package developers.guru.freedictionaryapp.base
 
+import android.app.Activity
 import android.app.Application
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.AndroidViewModel
@@ -15,5 +16,5 @@ abstract class AppViewModel(application: Application) : AndroidViewModel(applica
 
     var isLoading = MutableLiveData<Boolean>()
 
-    abstract fun initialization(viewDataBinding: ViewDataBinding)
+    abstract fun initialization(activity: Activity, viewDataBinding: ViewDataBinding)
 }

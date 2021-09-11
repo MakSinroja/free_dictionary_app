@@ -31,6 +31,6 @@ class SplashActivity : AppActivity<ActivitySplashBinding, SplashViewModel>() {
     override fun setLifecycleOwner(): LifecycleOwner = this@SplashActivity
 
     override fun initialization() {
-        splashViewModel.initialization(getViewDataBinding())
+        splashViewModel.initialization(this@SplashActivity, getViewDataBinding())
     }
 }

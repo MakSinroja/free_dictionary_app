@@ -64,12 +64,12 @@ buildscript {
 
             'android'         : [
                     'architecture': [
-                            'lifecycle': [
+                            'lifecycle' : [
                                     'viewModel': "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.android.architecture.lifecycleVersion}",
                                     'livedata' : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.android.architecture.lifecycleVersion}",
                                     'compiler' : "androidx.lifecycle:lifecycle-compiler:${versions.android.architecture.lifecycleVersion}",
                             ],
-                            'room'     : [
+                            'room'      : [
                                     'runtime'  : "androidx.room:room-runtime:${versions.android.architecture.roomVersion}",
                                     'processor': "androidx.room:room-compiler:${versions.android.architecture.roomVersion}",
                             ],

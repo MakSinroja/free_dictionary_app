@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuDictionary"
+        android:contentDescription="@string/str_dictionary"
+        android:icon="@drawable/ic_vector_dictionary"
+        android:title="@string/str_dictionary" />
+
+    <item
+        android:id="@+id/menuWordHistory"
+        android:contentDescription="@string/str_word_history"
+        android:icon="@drawable/ic_vector_word_history"
+        android:title="@string/str_word_history" />
+
+    <item
+        android:id="@+id/menuSettings"
+        android:contentDescription="@string/str_settings"
+        android:icon="@drawable/ic_vector_settings"
+        android:title="@string/str_settings" />
+</menu>

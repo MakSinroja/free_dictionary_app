@@ -92,8 +92,9 @@ android {
         }
         main {
             res.srcDirs = [
+                    file('src/main/res/layouts/home').listFiles(),
                     file('src/main/res/layouts').listFiles(),
-                    'src/main/res'
+                    'src/main/res',
             ]
         }
     }
@@ -130,6 +131,7 @@ android {
 dependencies {
     // Custom Libraries
     implementation project(':core')
+    implementation project(':bottomNavigationBar')
 }
 
 apply from: '../dependencies.gradle'

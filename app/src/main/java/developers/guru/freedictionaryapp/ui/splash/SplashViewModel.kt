@@ -1,6 +1,8 @@
 package developers.guru.freedictionaryapp.ui.splash
 
+import android.app.Activity
 import android.app.Application
+import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import android.view.animation.Animation
@@ -10,6 +12,7 @@ import androidx.databinding.ViewDataBinding
 import dagger.hilt.android.lifecycle.HiltViewModel
 import developers.guru.freedictionaryapp.base.AppViewModel
 import developers.guru.freedictionaryapp.databinding.ActivitySplashBinding
+import developers.guru.freedictionaryapp.ui.home.main.HomeActivity
 import javax.inject.Inject
 
 /**
@@ -21,7 +24,7 @@ class SplashViewModel @Inject constructor(application: Application) : AppViewMod
     var activitySplashBinding: ActivitySplashBinding? = null
     private lateinit var fadeInAnimation: Animation
 
-    override fun initialization(viewDataBinding: ViewDataBinding) {
+    override fun initialization(activity: Activity, viewDataBinding: ViewDataBinding) {
         activitySplashBinding = viewDataBinding as ActivitySplashBinding
 
         fadeInAnimation =
@@ -39,7 +42,10 @@ class SplashViewModel @Inject constructor(application: Application) : AppViewMod
             }, 2000)
 
             motionLayout.setTransitionListener(object : MotionLayout.TransitionListener {
-                override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {}
+                override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
+                    activity.startActivity(Intent(activity, HomeActivity::class.java))
+                    activity.finish()
+                }
 
                 override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {}
 

@@ -33,7 +33,7 @@
                 android:layout_width="@dimen/_65sdp"
                 android:layout_height="@dimen/_65sdp"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/ic_app_icon" />
+                app:srcCompat="@drawable/ic_vector_app_icon" />
 
         </androidx.cardview.widget.CardView>
 

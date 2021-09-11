@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 rootProject.name = "Free Dictionary App"
 include ':app'
 include ':core'
+include ':bottomNavigationBar'

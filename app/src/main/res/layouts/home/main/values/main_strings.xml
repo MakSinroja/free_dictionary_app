@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_dictionary">Dictionary</string>
+    <string name="str_word_history">Word History</string>
+    <string name="str_settings">Settings</string>
+</resources>

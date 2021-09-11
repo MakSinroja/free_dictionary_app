@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="homeViewModel"
+            type="developers.guru.freedictionaryapp.ui.home.main.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/str_app_name"
+            app:titleTextColor="@android:color/white" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bottomNavigationBarCardView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_56sdp"
+            android:layout_margin="@dimen/_5sdp"
+            app:cardBackgroundColor="?attr/colorPrimary"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <developers.guru.bottomNavigationBar.ui.BottomNavigationBar
+                android:id="@+id/bottomNavigationBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:bnbBackgroundColor="?attr/colorPrimary"
+                app:bnbIconSize="@dimen/_20sdp"
+                app:bnbIconTint="#FFFFFF"
+                app:bnbIconTintActive="#FFFFFF"
+                app:bnbIndicatorColor="#2DFFFFFF"
+                app:bnbIndicatorRadius="@dimen/_10sdp"
+                app:bnbItemPadding="@dimen/_8sdp"
+                app:bnbMenu="@menu/bottom_navigation_bar_menu"
+                app:bnbSideMargins="@dimen/_8sdp"
+                app:bnbTextColor="@android:color/white"
+                app:bnbTextSize="@dimen/_9ssp" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -49,7 +49,6 @@ abstract class AppActivity<T : ViewDataBinding, V : AppViewModel> : AppCompatAct
 
         this.setupStatusBarColor(changeStatusBarColor())
         super.onCreate(savedInstanceState)
-        setSelectedTheme(storePreferences.themeId)
 
         setupViewBinding()
 

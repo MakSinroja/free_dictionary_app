@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BottomNavigationBar">
+        <attr name="bnbMenu" format="reference" />
+        <attr name="bnbBackgroundColor" format="color" />
+        <attr name="bnbIndicatorColor" format="color" />
+        <attr name="bnbIndicatorRadius" format="dimension" />
+        <attr name="bnbSideMargins" format="dimension" />
+        <attr name="bnbItemPadding" format="dimension" />
+        <attr name="bnbTextColor" format="color" />
+        <attr name="bnbItemFontFamily" format="reference" />
+        <attr name="bnbTextSize" format="dimension" />
+        <attr name="bnbIconSize" format="dimension" />
+        <attr name="bnbIconMargin" format="dimension" />
+        <attr name="bnbIconTint" format="color" />
+        <attr name="bnbIconTintActive" format="color" />
+        <attr name="bnbCornerRadius" format="dimension" />
+        <attr name="bnbActiveItem" format="integer" />
+        <attr name="bnbDuration" format="integer" />
+    </declare-styleable>
+
+    <attr name="BottomNavigationBarStyle" format="reference" />
+</resources>
