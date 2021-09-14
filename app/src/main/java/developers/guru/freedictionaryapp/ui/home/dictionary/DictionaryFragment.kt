@@ -22,7 +22,5 @@ class DictionaryFragment : AppFragment<FragmentDictionaryBinding, DictionaryView
 
     override fun setLifeCycleOwner(): LifecycleOwner = viewLifecycleOwner
 
-    override fun initialization() {
-        dictionaryViewModel.initialization(requireActivity(), getViewModelDataBinding())
-    }
+    override fun initialization() {}
 }

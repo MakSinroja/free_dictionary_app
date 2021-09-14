@@ -23,8 +23,8 @@ import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.view.ViewCompat
 import developers.guru.bottomNavigationBar.R
 import developers.guru.bottomNavigationBar.extensions.d2p
-import developers.guru.bottomNavigationBar.listeners.OnItemReselectedListener
-import developers.guru.bottomNavigationBar.listeners.OnItemSelectedListener
+import developers.guru.bottomNavigationBar.listeners.OnItemBottomNavigationBarReselectedListener
+import developers.guru.bottomNavigationBar.listeners.OnItemBottomNavigationBarSelectedListener
 import developers.guru.bottomNavigationBar.models.BottomNavigationBarItem
 import developers.guru.bottomNavigationBar.utils.AccessibleExploreByTouchHelper
 import developers.guru.bottomNavigationBar.utils.BottomNavigationBarParser
@@ -219,9 +219,10 @@ class BottomNavigationBar @JvmOverloads constructor(
         }
 
     // Listeners
-    var onItemSelectedListener: OnItemSelectedListener? = null
+    var onItemBottomNavigationBarSelectedListener: OnItemBottomNavigationBarSelectedListener? = null
 
-    var onItemReselectedListener: OnItemReselectedListener? = null
+    var onItemBottomNavigationBarReselectedListener: OnItemBottomNavigationBarReselectedListener? =
+        null
 
     var onItemSelected: ((Int) -> Unit)? = null
 
@@ -502,10 +503,10 @@ class BottomNavigationBar @JvmOverloads constructor(
         if (viewId != itemActiveIndex) {
             itemActiveIndex = viewId
             onItemSelected?.invoke(viewId)
-            onItemSelectedListener?.onItemSelect(viewId)
+            onItemBottomNavigationBarSelectedListener?.onItemSelect(viewId)
         } else {
             onItemReselected?.invoke(viewId)
-            onItemReselectedListener?.onItemReselect(viewId)
+            onItemBottomNavigationBarReselectedListener?.onItemReselect(viewId)
         }
         exploreByTouchHelper.sendEventForVirtualView(
             viewId,
@@ -559,7 +560,7 @@ class BottomNavigationBar @JvmOverloads constructor(
 
     /**
      *
-     * Just call [BottomNavigationBar.setOnItemSelectedListener] to override [onItemSelectedListener]
+     * Just call [BottomNavigationBar.setOnItemSelectedListener] to override [onItemBottomNavigationBarSelectedListener]
      *
      * @sample
      * setOnItemSelectedListener { position ->
@@ -567,17 +568,18 @@ class BottomNavigationBar @JvmOverloads constructor(
      * }
      */
     fun setOnItemSelectedListener(listener: (position: Int) -> Unit) {
-        onItemSelectedListener = object : OnItemSelectedListener {
-            override fun onItemSelect(position: Int): Boolean {
-                listener.invoke(position)
-                return true
+        onItemBottomNavigationBarSelectedListener =
+            object : OnItemBottomNavigationBarSelectedListener {
+                override fun onItemSelect(position: Int): Boolean {
+                    listener.invoke(position)
+                    return true
+                }
             }
-        }
     }
 
     /**
      *
-     * Just call [BottomNavigationBar.setOnItemReselectedListener] to override [onItemReselectedListener]
+     * Just call [BottomNavigationBar.setOnItemReselectedListener] to override [onItemBottomNavigationBarReselectedListener]
      *
      * @sample
      * setOnItemReselectedListener { position ->
@@ -585,11 +587,12 @@ class BottomNavigationBar @JvmOverloads constructor(
      * }
      */
     fun setOnItemReselectedListener(listener: (position: Int) -> Unit) {
-        onItemReselectedListener = object : OnItemReselectedListener {
-            override fun onItemReselect(position: Int) {
-                listener.invoke(position)
+        onItemBottomNavigationBarReselectedListener =
+            object : OnItemBottomNavigationBarReselectedListener {
+                override fun onItemReselect(position: Int) {
+                    listener.invoke(position)
+                }
             }
-        }
     }
 
     companion object {

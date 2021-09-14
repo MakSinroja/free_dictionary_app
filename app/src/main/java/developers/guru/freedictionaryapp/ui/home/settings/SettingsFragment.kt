@@ -22,7 +22,5 @@ class SettingsFragment : AppFragment<FragmentSettingsBinding, SettingsViewModel>
 
     override fun setLifeCycleOwner(): LifecycleOwner = viewLifecycleOwner
 
-    override fun initialization() {
-        settingsViewModel.initialization(requireActivity(), getViewModelDataBinding())
-    }
+    override fun initialization() {}
 }

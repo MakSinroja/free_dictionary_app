@@ -1,11 +1,8 @@
 package developers.guru.freedictionaryapp.ui.home.wordHistory
 
-import android.app.Activity
 import android.app.Application
-import androidx.databinding.ViewDataBinding
 import dagger.hilt.android.lifecycle.HiltViewModel
 import developers.guru.freedictionaryapp.base.AppViewModel
-import developers.guru.freedictionaryapp.databinding.FragmentWordHistoryBinding
 import javax.inject.Inject
 
 /**
@@ -13,11 +10,4 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class WordHistoryViewModel @Inject constructor(application: Application) :
-    AppViewModel(application) {
-
-    private lateinit var fragmentWordHistoryBinding: FragmentWordHistoryBinding
-
-    override fun initialization(activity: Activity, viewDataBinding: ViewDataBinding) {
-        fragmentWordHistoryBinding = viewDataBinding as FragmentWordHistoryBinding
-    }
-}
+    AppViewModel(application)

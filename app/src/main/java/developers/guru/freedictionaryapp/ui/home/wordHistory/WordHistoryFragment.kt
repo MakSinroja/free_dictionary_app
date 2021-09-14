@@ -22,7 +22,5 @@ class WordHistoryFragment : AppFragment<FragmentWordHistoryBinding, WordHistoryV
 
     override fun setLifeCycleOwner(): LifecycleOwner = viewLifecycleOwner
 
-    override fun initialization() {
-        wordHistoryViewModel.initialization(requireActivity(), getViewModelDataBinding())
-    }
+    override fun initialization() {}
 }

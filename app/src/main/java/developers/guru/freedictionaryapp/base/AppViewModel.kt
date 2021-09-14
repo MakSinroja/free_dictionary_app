@@ -1,8 +1,6 @@
 package developers.guru.freedictionaryapp.base
 
-import android.app.Activity
 import android.app.Application
-import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import developers.guru.core.preferences.StorePreferences
@@ -15,6 +13,4 @@ abstract class AppViewModel(application: Application) : AndroidViewModel(applica
     var storePreferences: StorePreferences = StorePreferences(application)
 
     var isLoading = MutableLiveData<Boolean>()
-
-    abstract fun initialization(activity: Activity, viewDataBinding: ViewDataBinding)
 }
